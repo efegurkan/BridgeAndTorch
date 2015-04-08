@@ -28,18 +28,37 @@ public class TreeOperations {
 		Tree ret = new Tree();
 		Node startNod = new Node();
 		ret.setRoot(startNod);
-
-		DFSadd(speed, queueueueue, startNod);
+		ArrayList<Node> leaflist = new ArrayList<Node>();
 		
+		DFSadd(speed, queueueueue, startNod,leaflist);
+		
+		System.out.println("Leaflist");
+		for (Node node : leaflist) {
+//			System.out.println(node);
+//			System.out.println(node.getFunctional());
+			Node current = node;
+			int total = 0;
+			int totheur = 0;
+			while(current.getParent() != null){
+				total += current.getFunctional();
+				totheur += current.getHeuristic();
+				current = current.getParent();
+			}
+//			System.out.println(node);
+//			System.out.println(totheur);
+//			System.out.println(total);
+			System.out.println(totheur+total);
+		}
 		return ret;
 	}
-	public void DFSadd(ArrayList<Integer> kalanlar , PriorityQueue<Integer> gidenler, Node parent) {
+	public void DFSadd(ArrayList<Integer> kalanlar , PriorityQueue<Integer> gidenler, Node parent, ArrayList<Node> leaflist) {
 		if(kalanlar.size()==2) {
 			Node leaf = new Node();
 			leaf.setLeaf(true);
 			leaf.setParent(parent);
 			leaf.setHeuristic(0);
 			leaf.setFunctional(Math.max(kalanlar.get(0), kalanlar.get(1)));
+			leaflist.add(leaf);
 			return;
 		}
 		int sayi = (int) CombinatoricsUtils.binomialCoefficient(kalanlar.size(), 2);
@@ -63,7 +82,7 @@ public class TreeOperations {
 
 			current.setHeuristic(klongiden.peek());
 			klonkalan.add(klongiden.poll());
-			DFSadd(klonkalan, klongiden, current);
+			DFSadd(klonkalan, klongiden, current,leaflist);
 			System.out.println("================================");
 			System.out.println(current.getParent());
 			System.out.println(current);

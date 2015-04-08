@@ -19,4 +19,18 @@ public class Tree {
 		this.root = aNewRoot;
 	}
 	
+	public void printLeafs(){
+		preorder(this.root, 0);
+	}
+
+	public void preorder(Node node, int gscore){
+		
+		gscore += node.getFunctional()+node.getHeuristic();
+		if(node.isLeaf()){
+			System.out.println("Leaf node reached gscore: "+ gscore);
+		}
+		for (Node child : node.getChildren()) {
+			preorder(child,gscore);
+		}
+	}
 }
