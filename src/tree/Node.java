@@ -10,11 +10,21 @@ public class Node {
 	private ArrayList<Node> children;
 	private int heuristic;
 	private int functional;
+	private boolean isLeaf;
 	
+	public boolean isLeaf() {
+		return isLeaf;
+	}
+
+	public void setLeaf(boolean isLeaf) {
+		this.isLeaf = isLeaf;
+	}
+
 	public Node() {
 //		this.nodeId = -1;
 		this.parent = null;
 		this.children = new ArrayList<>();
+		this.isLeaf = false;
 	}
 	
 //	public Node(int aNodeId,

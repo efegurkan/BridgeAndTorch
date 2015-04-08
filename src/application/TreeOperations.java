@@ -14,7 +14,14 @@ public class TreeOperations {
 	public TreeOperations(){
 	}
 	
-	public Tree populateTree(ArrayList<Integer> speed ){
+	public Tree tree() {
+		Tree agac = new Tree();
+		Node startNod = new Node();
+		agac.setRoot(startNod);
+		return agac;
+	}
+	
+	/*public Tree populateTree(ArrayList<Integer> speed ){
 		PriorityQueue<Integer> queueueueue = new PriorityQueue<Integer>();
 //		ArrayList<Integer> eziqler = (ArrayList)speed.clone();
 		int idCounter=0;
@@ -29,6 +36,7 @@ public class TreeOperations {
 	public void DFSadd(ArrayList<Integer> kalanlar , PriorityQueue<Integer> gidenler, Node parent) {
 		if(kalanlar.size()==2) {
 			Node leaf = new Node();
+			leaf.setLeaf(true);
 			leaf.setParent(parent);
 			leaf.setHeuristic(0);
 			leaf.setFunctional(Math.max(kalanlar.get(0), kalanlar.get(1)));
@@ -65,5 +73,5 @@ public class TreeOperations {
 			
 			}
 		}
-	}
+	}*/
 }
