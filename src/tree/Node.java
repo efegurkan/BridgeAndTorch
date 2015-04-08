@@ -44,6 +44,18 @@ public class Node {
 //		this.children = aChildren;
 //		
 //	}
+
+	public Node(int functional, int heuristic,Node parent,boolean isLeaf ){
+		this.functional=functional;
+		this.heuristic=heuristic;
+		this.parent=parent;
+		this.isLeaf = isLeaf;
+		this.children = new ArrayList<>();
+		if(parent!= null){
+			parent.addChild(this);
+		}
+		
+	}
 	
 	public Node getParent() {
 		return this.parent;

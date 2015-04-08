@@ -94,4 +94,72 @@ public class TreeOperations {
 			}
 		}
 	}
+	
+	public Tree generateTree(){
+		Tree ret = new Tree();
+		
+		Node startNode = new Node();
+		ret.setRoot(startNode);
+		
+		// First child and its children
+		Node first = new Node(2,1,startNode,false);
+		Node firstBirBes = new Node(5,1,first,false);
+		Node firstBirSekiz = new Node(8,1,first,false);
+		Node firstBesSekiz = new Node(8,2,first,false);
+		Node birSekizF = new Node(8,0,firstBirBes,true);
+		Node birBesF = new Node(5,0,firstBirSekiz,true);
+		Node birIkiF = new Node(2,0,firstBesSekiz,true);
+		
+		
+		//Second child and its children
+		Node second = new Node(5,1,startNode,false);
+		Node secondBirIki = new Node(2,1,second,false);
+		Node secondBirSekiz = new Node(8,1,second,false);
+		Node secondIkiSekiz = new Node(8,2,second,false);
+		Node birSekizS = new Node(8,0,secondBirIki,true);
+		Node birIkiS = new Node(2,0,secondBirSekiz,true);
+		Node birIkiSe = new Node(2,0,secondIkiSekiz,true);
+		
+		//Third child and its children
+		Node third = new Node(8,1,startNode,false);
+		Node thirdBirIki = new Node(2,1,third,false);
+		Node thirdBirBes = new Node(5,1,third,false);
+		Node thirdIkiBes = new Node(5,2,third,false);
+		Node birBesT = new Node(5,0,thirdBirIki,true);
+		Node birIkiT = new Node(2,0,thirdBirBes,true);
+		Node birIkiTt = new Node(2,0,thirdIkiBes,true);
+		
+		//Forth child and its children
+		Node forth = new Node(5,2,startNode,false);
+		Node forthBirSekiz = new Node(8,1,forth,false);
+		Node forthBirIki = new Node(2,1,forth,false);
+		Node forthIkiSekiz = new Node(8,2,forth,false);
+		Node birIkiFo = new Node(2,0,forthBirSekiz,true);
+		Node birSekizFo = new Node(8,0,forthBirIki,true);
+		Node birIkiFor = new Node(2,0,forthIkiSekiz,true);
+		
+		//Fifth child and its children
+		Node fifth = new Node(8,2,startNode,false);
+		Node fifthBirIki = new Node(2,1,fifth,false);
+		Node fifthBirBes = new Node(5,1,fifth,false);
+		Node fifthIkiBes = new Node(5,2,fifth,false);
+		Node birBesFi = new Node(5,0,fifthBirIki,true);
+		Node birIkiFi = new Node(2,0,fifthBirBes,true);
+		Node birIkiFif = new Node(2,0,fifthIkiBes,true);
+		
+		//Sixth child and its children
+		Node sixth = new Node(8,5,startNode,false);
+		Node sixthBirIki = new Node(2,1,sixth,false);
+		Node sixthIkiBes = new Node(5,2,sixth,false);
+		Node sixthBirBes = new Node(5,1,sixth,false);
+		Node birBesSix = new Node(5,0,sixthBirIki,true);
+		Node birIkiSix = new Node(2,0,sixthIkiBes,true);
+		Node birIkiSixth = new Node(2,0,sixthBirBes,true);
+		
+		
+		
+		
+		return ret;
+	}
+
 }
