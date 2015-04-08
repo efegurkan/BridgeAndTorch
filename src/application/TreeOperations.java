@@ -21,7 +21,7 @@ public class TreeOperations {
 		return agac;
 	}
 	
-	/*public Tree populateTree(ArrayList<Integer> speed ){
+	public Tree populateTree(ArrayList<Integer> speed ){
 		PriorityQueue<Integer> queueueueue = new PriorityQueue<Integer>();
 //		ArrayList<Integer> eziqler = (ArrayList)speed.clone();
 		int idCounter=0;
@@ -61,7 +61,8 @@ public class TreeOperations {
 			klongiden.add(klonkalan.remove(j));
 			klongiden.add(klonkalan.remove(k-1));
 
-			current.setHeuristic(klongiden.poll());
+			current.setHeuristic(klongiden.peek());
+			klonkalan.add(klongiden.poll());
 			DFSadd(klonkalan, klongiden, current);
 			System.out.println("================================");
 			System.out.println(current.getParent());
@@ -73,5 +74,5 @@ public class TreeOperations {
 			
 			}
 		}
-	}*/
+	}
 }
