@@ -88,7 +88,7 @@ public class TreeOperations {
 			System.out.println(current);
 			System.out.println("================================");
 			klonkalan = (ArrayList<Integer>) kalanlar.clone();
-			klongiden.retainAll(gidenler);
+			klongiden = new PriorityQueue<>(gidenler);
 				}
 			
 			}
