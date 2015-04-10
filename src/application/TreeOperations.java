@@ -67,7 +67,7 @@ public class TreeOperations {
 		PriorityQueue<Integer> klongiden = new PriorityQueue<>(); 
 		klongiden.retainAll(gidenler); 
 		
-		for(int i=0;i<sayi;i++) {
+//		for(int i=0;i<sayi;i++) {
 			
 			for(int j= 0; j<kalanlar.size(); ++j){
 				for(int k = j+1; k<kalanlar.size(); k++){
@@ -91,7 +91,7 @@ public class TreeOperations {
 			klongiden = new PriorityQueue<>(gidenler);
 				}
 			
-			}
+//			}
 		}
 	}
 	
